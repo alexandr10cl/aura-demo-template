@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}Demo com Navbar{% endblock %}
+
+{% block header %}
+<!-- Navbar Horizontal -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+            <span>🚀</span>
+            <span>Sua Empresa</span>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                <a href="#" class="navbar-link active">Início</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#sobre" class="navbar-link">Sobre</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#servicos" class="navbar-link">Serviços</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#portfolio" class="navbar-link">Portfólio</a>
+            </li>
+            <li class="navbar-item">
+                <a href="#contato" class="navbar-link">Contato</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Bem-vindo ao Template Premium</h1>
+            <p class="hero-subtitle">
+                Design moderno e componentes reutilizáveis para criar demos impressionantes em tempo recorde
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-lg">Começar Agora</button>
+                <button class="btn btn-outline btn-lg" style="color: white; border-color: white;">Saiba Mais</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Seção de Cards -->
+    <section class="section" id="servicos">
+        <div class="section-header">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">
+                Componentes premium prontos para uso em suas demonstrações
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-3">
+            <!-- Card Básico -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Card Básico</h3>
+                    <p class="card-subtitle">Perfeito para informações gerais</p>
+                </div>
+                <div class="card-body">
+                    Este é um card básico com header, body e footer. Ideal para apresentar conteúdo de forma organizada.
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted">Atualizado hoje</span>
+                    <button class="btn btn-primary btn-sm">Ver Mais</button>
+                </div>
+            </div>
+            
+            <!-- Card de Estatística -->
+            <div class="card">
+                <div class="card-stat">
+                    <div class="card-stat-content">
+                        <div class="card-stat-value">1,234</div>
+                        <div class="card-stat-label">Clientes Ativos</div>
+                        <div class="card-stat-change positive">
+                            ↑ 12% este mês
+                        </div>
+                    </div>
+                    <div class="card-stat-icon">📈</div>
+                </div>
+            </div>
+            
+            <!-- Card de Ação -->
+            <div class="card card-action">
+                <div class="card-action-icon">🎯</div>
+                <h3 class="card-action-title">Ação Rápida</h3>
+                <p class="card-action-description">
+                    Cards especiais para chamar atenção para ações importantes
+                </p>
+                <button class="btn btn-outline" style="color: white; border-color: white;">
+                    Executar Ação
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Botões -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Sistema de Botões</h2>
+            <p class="section-subtitle">Diferentes estilos para cada necessidade</p>
+        </div>
+        
+        <div class="text-center">
+            <h4 class="mb-3">Variações de Estilo</h4>
+            <div class="btn-group mb-4">
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-outline">Outline</button>
+                <button class="btn btn-ghost">Ghost</button>
+            </div>
+            
+            <h4 class="mb-3">Tamanhos</h4>
+            <div class="btn-group mb-4">
+                <button class="btn btn-primary btn-sm">Pequeno</button>
+                <button class="btn btn-primary">Médio</button>
+                <button class="btn btn-primary btn-lg">Grande</button>
+            </div>
+            
+            <h4 class="mb-3">Estados</h4>
+            <div class="btn-group">
+                <button class="btn btn-primary">Normal</button>
+                <button class="btn btn-primary" disabled>Desabilitado</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Formulários -->
+    <section class="section" id="contato">
+        <div class="section-header">
+            <h2 class="section-title">Formulários Premium</h2>
+            <p class="section-subtitle">Campos de entrada com design moderno</p>
+        </div>
+        
+        <div class="grid grid-cols-2">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Formulário de Contato</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label required">Nome Completo</label>
+                            <input type="text" class="form-input" placeholder="Digite seu nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label required">E-mail</label>
+                            <input type="email" class="form-input" placeholder="seu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Departamento</label>
+                            <select class="form-select">
+                                <option>Selecione uma opção</option>
+                                <option>Vendas</option>
+                                <option>Suporte</option>
+                                <option>Financeiro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Mensagem</label>
+                            <textarea class="form-textarea" placeholder="Digite sua mensagem..."></textarea>
+                            <p class="form-help">Descreva como podemos ajudar você</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="terms">
+                                <label class="form-check-label" for="terms">
+                                    Concordo com os termos e condições
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Estados de Validação</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="form-label">Campo Válido</label>
+                        <input type="text" class="form-input is-valid" value="Conteúdo válido">
+                        <p class="form-feedback valid-feedback">✓ Campo preenchido corretamente</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Campo Inválido</label>
+                        <input type="text" class="form-input is-invalid" value="Conteúdo inválido">
+                        <p class="form-feedback invalid-feedback">✗ Por favor, corrija este campo</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Opções de Escolha</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="opcao" id="opcao1" checked>
+                            <label class="form-check-label" for="opcao1">Opção 1</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="opcao" id="opcao2">
+                            <label class="form-check-label" for="opcao2">Opção 2</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="opcao" id="opcao3">
+                            <label class="form-check-label" for="opcao3">Opção 3</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

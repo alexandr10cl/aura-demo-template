@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+
+{% block title %}Demo com Sidebar{% endblock %}
+
+{% block body_content %}
+<!-- Sidebar Lateral -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <a href="/" class="sidebar-brand">
+            <span>🚀</span>
+            <span>Sua Empresa</span>
+        </a>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <!-- Seção Principal -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Principal</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="#dashboard" class="sidebar-link active">
+                        <span>📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#analytics" class="sidebar-link">
+                        <span>📈</span>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#reports" class="sidebar-link">
+                        <span>📋</span>
+                        <span>Relatórios</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Seção de Gestão -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Gestão</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="#clientes" class="sidebar-link">
+                        <span>👥</span>
+                        <span>Clientes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#projetos" class="sidebar-link">
+                        <span>📁</span>
+                        <span>Projetos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#tarefas" class="sidebar-link">
+                        <span>✅</span>
+                        <span>Tarefas</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#calendario" class="sidebar-link">
+                        <span>📅</span>
+                        <span>Calendário</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Seção de Configurações -->
+        <div class="sidebar-section">
+            <div class="sidebar-section-title">Sistema</div>
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="#configuracoes" class="sidebar-link">
+                        <span>⚙️</span>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#perfil" class="sidebar-link">
+                        <span>👤</span>
+                        <span>Perfil</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#ajuda" class="sidebar-link">
+                        <span>❓</span>
+                        <span>Ajuda</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+
+<!-- Botão Toggle para Mobile -->
+<button class="sidebar-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')">
+    ☰
+</button>
+
+<!-- Conteúdo Principal com Layout Sidebar -->
+<div class="layout-with-sidebar">
+    <main>
+        <div class="container">
+            <!-- Header da Página -->
+            <div class="page-header">
+                <h1 class="page-title">Dashboard Principal</h1>
+                <p class="page-subtitle">Visão geral dos principais indicadores e métricas</p>
+            </div>
+            
+            <!-- Grid de Cards de Estatísticas -->
+            <section class="section">
+                <div class="grid grid-cols-4">
+                    <div class="card">
+                        <div class="card-stat">
+                            <div class="card-stat-content">
+                                <div class="card-stat-value">$45,231</div>
+                                <div class="card-stat-label">Receita Total</div>
+                                <div class="card-stat-change positive">
+                                    ↑ 20.1% vs mês anterior
+                                </div>
+                            </div>
+                            <div class="card-stat-icon">💰</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-stat">
+                            <div class="card-stat-content">
+                                <div class="card-stat-value">2,345</div>
+                                <div class="card-stat-label">Novos Usuários</div>
+                                <div class="card-stat-change positive">
+                                    ↑ 15.3% vs mês anterior
+                                </div>
+                            </div>
+                            <div class="card-stat-icon">👥</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-stat">
+                            <div class="card-stat-content">
+                                <div class="card-stat-value">98.2%</div>
+                                <div class="card-stat-label">Satisfação</div>
+                                <div class="card-stat-change positive">
+                                    ↑ 2.1% vs mês anterior
+                                </div>
+                            </div>
+                            <div class="card-stat-icon">😊</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-stat">
+                            <div class="card-stat-content">
+                                <div class="card-stat-value">142</div>
+                                <div class="card-stat-label">Projetos Ativos</div>
+                                <div class="card-stat-change negative">
+                                    ↓ 5.4% vs mês anterior
+                                </div>
+                            </div>
+                            <div class="card-stat-icon">📊</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Conteúdo Principal -->
+            <section class="section">
+                <div class="grid grid-cols-2">
+                    <!-- Card de Tabela -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Projetos Recentes</h3>
+                            <p class="card-subtitle">Últimas atualizações dos projetos</p>
+                        </div>
+                        <div class="card-body">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--border-color);">
+                                        <th style="text-align: left; padding: 8px;">Projeto</th>
+                                        <th style="text-align: left; padding: 8px;">Status</th>
+                                        <th style="text-align: left; padding: 8px;">Progresso</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: 8px;">Website Redesign</td>
+                                        <td style="padding: 8px;"><span style="color: var(--success-color);">Ativo</span></td>
+                                        <td style="padding: 8px;">75%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: 8px;">Mobile App</td>
+                                        <td style="padding: 8px;"><span style="color: var(--warning-color);">Revisão</span></td>
+                                        <td style="padding: 8px;">45%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--border-light);">
+                                        <td style="padding: 8px;">API Integration</td>
+                                        <td style="padding: 8px;"><span style="color: var(--success-color);">Ativo</span></td>
+                                        <td style="padding: 8px;">90%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px;">Database Migration</td>
+                                        <td style="padding: 8px;"><span style="color: var(--info-color);">Planejado</span></td>
+                                        <td style="padding: 8px;">10%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-ghost btn-sm">Ver Todos</button>
+                            <button class="btn btn-primary btn-sm">Novo Projeto</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Card de Atividades -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Atividades Recentes</h3>
+                            <p class="card-subtitle">Últimas 24 horas</p>
+                        </div>
+                        <div class="card-body">
+                            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+                                <div style="display: flex; align-items: start; gap: 12px;">
+                                    <span style="font-size: 20px;">📝</span>
+                                    <div>
+                                        <div style="font-weight: 500;">Novo comentário adicionado</div>
+                                        <div style="font-size: 14px; color: var(--text-muted);">João Silva comentou no projeto Website Redesign</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Há 2 horas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+                                <div style="display: flex; align-items: start; gap: 12px;">
+                                    <span style="font-size: 20px;">✅</span>
+                                    <div>
+                                        <div style="font-weight: 500;">Tarefa concluída</div>
+                                        <div style="font-size: 14px; color: var(--text-muted);">Maria Santos finalizou "Implementar autenticação"</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Há 4 horas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border-light);">
+                                <div style="display: flex; align-items: start; gap: 12px;">
+                                    <span style="font-size: 20px;">👤</span>
+                                    <div>
+                                        <div style="font-weight: 500;">Novo membro adicionado</div>
+                                        <div style="font-size: 14px; color: var(--text-muted);">Pedro Costa entrou na equipe de desenvolvimento</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Há 6 horas</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div style="display: flex; align-items: start; gap: 12px;">
+                                    <span style="font-size: 20px;">🚀</span>
+                                    <div>
+                                        <div style="font-weight: 500;">Deploy realizado</div>
+                                        <div style="font-size: 14px; color: var(--text-muted);">Versão 2.1.0 publicada em produção</div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Há 8 horas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Seção de Ações Rápidas -->
+            <section class="section">
+                <h2 class="section-title">Ações Rápidas</h2>
+                <div class="grid grid-cols-4">
+                    <div class="card card-action">
+                        <div class="card-action-icon">➕</div>
+                        <h4 class="card-action-title">Novo Projeto</h4>
+                        <p class="card-action-description">Criar um novo projeto</p>
+                    </div>
+                    
+                    <div class="card card-action" style="background: var(--secondary-color);">
+                        <div class="card-action-icon">📊</div>
+                        <h4 class="card-action-title">Gerar Relatório</h4>
+                        <p class="card-action-description">Exportar dados em PDF</p>
+                    </div>
+                    
+                    <div class="card card-action" style="background: var(--success-color);">
+                        <div class="card-action-icon">👥</div>
+                        <h4 class="card-action-title">Convidar Membro</h4>
+                        <p class="card-action-description">Adicionar novo usuário</p>
+                    </div>
+                    
+                    <div class="card card-action" style="background: var(--info-color);">
+                        <div class="card-action-icon">⚙️</div>
+                        <h4 class="card-action-title">Configurações</h4>
+                        <p class="card-action-description">Ajustar preferências</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer dentro do layout -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Sua Empresa</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Sobre</a>
+                    <a href="#" class="footer-link">Serviços</a>
+                    <a href="#" class="footer-link">Contato</a>
+                    <a href="#" class="footer-link">Privacidade</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2025 Sua Empresa. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock %}

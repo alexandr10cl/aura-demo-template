@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Demo Premium{% endblock %} - Sua Empresa</title>
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="{% block description %}Demo premium com design moderno e componentes reutilizáveis{% endblock %}">
+    
+    <!-- Favicon (adicione seu favicon aqui) -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block body_content %}
+        {% block header %}{% endblock %}
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        
+        {% block footer %}
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">Sua Empresa</div>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Sobre</a>
+                        <a href="#" class="footer-link">Serviços</a>
+                        <a href="#" class="footer-link">Contato</a>
+                        <a href="#" class="footer-link">Privacidade</a>
+                    </div>
+                    <div class="footer-copyright">
+                        &copy; 2025 Sua Empresa. Todos os direitos reservados.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% endblock %}
+    {% endblock %}
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
