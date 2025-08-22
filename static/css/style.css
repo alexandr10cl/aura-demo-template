@@ -1,7 +1,8 @@
 /* ========================================
-   IMPORTAÇÕES E FONTE MODERNA
+   IMPORTAÇÕES E FONTES PREMIUM
    ======================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import url('./variables.css');
 @import url('./components.css');
 
@@ -27,16 +28,21 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga", "kern";
+    letter-spacing: -0.01em;
 }
 
 /* ========================================
-   TIPOGRAFIA
+   TIPOGRAFIA PREMIUM
    ======================================== */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: var(--font-semibold);
     line-height: var(--leading-tight);
     color: var(--text-primary);
+    letter-spacing: -0.025em;
+    font-feature-settings: "liga", "kern", "cv01", "cv02";
 }
 
 h1 { 
@@ -78,11 +84,24 @@ p {
 a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-smooth);
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width var(--transition-base);
+    z-index: -1;
 }
 
 a:hover {
-    color: var(--primary-dark);
+    opacity: 0.8;
 }
 
 /* ========================================
@@ -137,7 +156,7 @@ main {
 }
 
 /* ========================================
-   HERO SECTION
+   HERO SECTION PREMIUM
    ======================================== */
 .hero {
     background: var(--primary-gradient);
@@ -146,6 +165,18 @@ main {
     text-align: center;
     position: relative;
     overflow: hidden;
+    animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    0% { 
+        background: var(--primary-gradient);
+        box-shadow: inset 0 0 100px rgba(99, 102, 241, 0.1);
+    }
+    100% { 
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+        box-shadow: inset 0 0 120px rgba(99, 102, 241, 0.2);
+    }
 }
 
 .hero::before {
@@ -157,6 +188,7 @@ main {
     bottom: 0;
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-content {
@@ -183,6 +215,32 @@ main {
     display: flex;
     gap: var(--spacing-md);
     justify-content: center;
+}
+
+/* Hero button overrides para resolver conflitos com estilos inline */
+.hero-actions .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-actions .btn-primary {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: var(--primary-600) !important;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-actions .btn-primary:hover {
+    opacity: 0.9;
+}
+
+.hero-actions .btn-outline {
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.hero-actions .btn-outline:hover {
+    opacity: 0.9;
 }
 
 /* ========================================
@@ -216,11 +274,11 @@ footer {
 
 .footer-link {
     color: var(--text-secondary);
-    transition: color var(--transition-fast);
+    transition: color var(--transition-base);
 }
 
 .footer-link:hover {
-    color: var(--primary-color);
+    opacity: 0.8;
 }
 
 .footer-copyright {
@@ -254,24 +312,5 @@ footer {
 .p-5 { padding: var(--spacing-xl); }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE (movido para components.css para consolidação)
    ======================================== */
-@media (max-width: 768px) {
-    h1 { font-size: var(--text-3xl); }
-    h2 { font-size: var(--text-2xl); }
-    
-    .hero-title { font-size: var(--text-3xl); }
-    .hero-subtitle { font-size: var(--text-lg); }
-    
-    .section { padding: var(--spacing-2xl) 0; }
-    
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-links {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-}
